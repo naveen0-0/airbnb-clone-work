@@ -1,0 +1,21 @@
+.navbar{
+  position: relative;
+  background-color: crimson;
+}
+
+.search_icon{
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 25px;
+  transform: translate(-50%,-50%);
+}
+
+.filter_icon{
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  right: 10px;
+  transform: translate(-50%,-50%);
+  border-radius: 999999999px;
+}
