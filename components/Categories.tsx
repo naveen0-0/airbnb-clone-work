@@ -1,8 +1,8 @@
-import { categories } from '../utils/uitls'
 import Image from 'next/image'
 import styles from '../styles/Category.module.css'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import { RiFilter3Line } from 'react-icons/ri'
+import { categories } from '../utils/uitls'
 
 export default function Categories() {
   return (
