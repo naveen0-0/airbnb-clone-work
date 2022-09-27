@@ -7,8 +7,10 @@ import Hotels from '../components/Hotels'
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <NavBar/>
-      <Categories/>
+      <div className={styles.nav_container}>
+        <NavBar/>
+        <Categories/>
+      </div>
       <Hotels/>
     </div>
   )
