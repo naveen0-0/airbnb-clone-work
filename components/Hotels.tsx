@@ -7,9 +7,9 @@ export default function Hotels() {
     <Box 
       display="grid" 
       gridTemplateColumns="repeat(auto-fit,minmax(250px,1fr))"
-      gap="10px"
+      gap="20px"
       width="95%"
-      marginY="10px"
+      marginY="20px"
       marginX="auto"
     >
       {hotels.map((hotel:HotelType) => <Hotel hotel={hotel} key={hotel.id}/>)}

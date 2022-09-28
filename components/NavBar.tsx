@@ -5,6 +5,7 @@ import { RiFilter3Line } from 'react-icons/ri'
 import { BsGlobe } from 'react-icons/bs'
 import { FiMenu } from 'react-icons/fi'
 import { FaUserCircle } from 'react-icons/fa'
+import Link from 'next/link'
 
 export default function NavBar() {
   const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
@@ -43,10 +44,12 @@ export default function NavBar() {
         :
         <Box borderBottom="1px solid #eee">
         <Box width="90%" margin="auto" display="flex" justifyContent="space-between" alignItems="center" paddingX="0px" paddingY="15px">
-          <Box display="flex" alignItems="center" flex={1}>
-            <Image src='/assets/images/logo.png' alt='Logo' w="35px"/>
-            <Text fontSize="1.5em" fontWeight="bold" color="#FF385C">airbnb</Text>
-          </Box>
+          <Link href='/'>
+            <Box display="flex" alignItems="center" flex={1} cursor="pointer">
+              <Image src='/assets/images/logo.png' alt='Logo' w="35px"/>
+              <Text fontSize="1.5em" fontWeight="bold" color="#FF385C">airbnb</Text>
+            </Box>
+          </Link>
           
           <Box flex={1}>
             <Box width="max-content" margin="auto" display="flex" justifyContent="center" alignItems="center" padding="10px" borderRadius="full" fontSize="14px" border="1px solid #eee" boxShadow="0px 0px 5px #eee">
