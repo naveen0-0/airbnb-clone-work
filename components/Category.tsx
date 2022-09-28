@@ -1,14 +1,23 @@
-import styles from '../styles/Category.module.css'
-import Image from 'next/image'
+import { Box, Image, Text } from '@chakra-ui/react'
+import { CategoryType } from '../utils/uitls'
 
-type Category = { title:string,src:string }
-export default function Category({ title, src }:Category) {
+export default function Category({ category }:{category:CategoryType}) {
   return (
-    <div className={styles.category}>
-      <div className={styles.category_image_container}>
-        <Image src={src} alt={title} width="25px" height="25px" className={styles.category_image}/>
-      </div>
-      <div className={styles.category_text}>{title}</div>
-    </div>
+    <Box 
+      padding="10px" 
+      cursor="pointer" 
+      opacity="0.5" 
+      _hover={{opacity:"1"}} 
+      transition="all 100ms ease-in"
+      sx={{':first-child':{opacity:"1", borderBottom:"2px solid #000"}}}
+    >
+
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <Image src={category.imgsrc} alt={category.title} width="25px" height="25px" display="flex" justifyContent="center" alignItems="center"/>
+      </Box>
+
+      <Text fontSize="14px" whiteSpace="nowrap" textAlign="center">{category.title}</Text>
+
+    </Box>
   )
 }

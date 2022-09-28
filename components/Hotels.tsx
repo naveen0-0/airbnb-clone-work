@@ -1,37 +1,20 @@
-import styles from '../styles/Hotels.module.css'
-import { Hotel, hotels } from '../utils/uitls'
-import { AiFillStar } from 'react-icons/ai'
+import { HotelType, hotels } from '../utils/uitls'
+import Hotel from './Hotel'
+import { Box } from '@chakra-ui/react'
 
 export default function Hotels() {
   return (
-    <div className={styles.hotels}>
-      {hotels.map((hotel:Hotel) => <Hotel hotel={hotel} key={hotel.id}/>)}
-    </div>
+    <Box 
+      display="grid" 
+      gridTemplateColumns="repeat(auto-fit,minmax(250px,1fr))"
+      gap="10px"
+      width="95%"
+      marginY="10px"
+      marginX="auto"
+    >
+      {hotels.map((hotel:HotelType) => <Hotel hotel={hotel} key={hotel.id}/>)}
+    </Box>
   )
 }
 
 
-
-function Hotel({ hotel }:{ hotel:Hotel }) {
-  return (
-    <div className={styles.hotel} onClick={() => console.log(hotel)}>
-
-      <div className={styles.hotel_image_container}>
-        <img src={hotel.imgsrc} alt={hotel.title} className={styles.hotel_image}/>
-      </div>
-
-      <div className={styles.hotel_info}>
-
-        <div className={styles.title_rating}>
-          <div className={styles.title}>{hotel.title}</div>
-          <div className={styles.rating}><AiFillStar size={16}/>{hotel.rating}</div>
-        </div>
-
-        <div>{hotel.distance} kilometers</div>
-        <div>{hotel.date}</div>
-        <div className={styles.price}><span className={styles.pricetxt}>&#8377;{hotel.price}</span> night</div>
-      </div>
-
-    </div>
-  )
-}

@@ -1,62 +1,84 @@
-import { Input } from '@chakra-ui/react'
-import styles from '../styles/NavBar.module.css'
+import { Box, Image, Text,Input, useMediaQuery } from '@chakra-ui/react'
+import Head from 'next/head'
 import { MdSearch } from 'react-icons/md'
 import { RiFilter3Line } from 'react-icons/ri'
-import Head from 'next/head'
 import { BsGlobe } from 'react-icons/bs'
 import { FiMenu } from 'react-icons/fi'
 import { FaUserCircle } from 'react-icons/fa'
 
 export default function NavBar() {
+  const [isLargerThan900] = useMediaQuery('(min-width: 900px)')
+
   return (
-    <div className={styles.navbar}>
+    <div>
       <Head>
         <title>Holiday Homes & Apartment Rentals - Airbnb - Airbnb</title>
       </Head>
 
-      <div className={styles.small_screen_navbar}>
-        <MdSearch className={styles.search_icon} size={20}/>
-        <input 
-          className={styles.input}
-          type="text"
-          placeholder='Where to?'
-        />
-        <RiFilter3Line className={styles.filter_icon} size={20}/>
-      </div>
+      {!isLargerThan900?
+        <Box position="relative" padding="10px">
+          <Box position="absolute" top="50%" left="35px" transform="translate(-50%,-50%)">
+            <MdSearch size={20}/>
+          </Box>
 
-      <div className={styles.larger_screen_navbar}>
-        <div className={styles.logo_container}>
-          <img 
-            src="/assets/images/logo.png" 
-            alt="Logo" 
-            className={styles.logo}
+          <Input 
+            type="text"
+            placeholder='Where to?'
+
+            variant="unstyled"
+            display="block"
+            outline="none"
+            border="none"
+            width="100%"
+            borderRadius="full"
+            padding={4}
+            paddingLeft="40px"
+            boxShadow="0px 0px 10px #aaa"
           />
-          <div className={styles.logotext}>airbnb</div>
-        </div>
-        
-        <div className={styles.center_navbar_container}>
-          <div className={styles.center_navbar}>
-            <div className={styles.center_navbar_item1}>Anywhere</div>
-            <div className={styles.center_navbar_item2}>Any week</div>
-            <div className={styles.center_navbar_item3}>
-              <div className={styles.add_guests}>Add Guests</div>
-              <div className={styles.search_icon_2}><MdSearch size={20} color="#fff"/></div>
-            </div>
-          </div>
-        </div>
 
-        <div className={styles.teritiary_nav_component_container}>
-          <div className={styles.teritiary_nav_component}>
-            <div className={styles.become_a_host}>Become a host</div>
-            <div className={styles.globe}><BsGlobe/></div>
-            <div className={styles.teritiary_inner_nav_component}>
-              <FiMenu size={20} className={styles.menu}/>
-              <FaUserCircle size={24}/>
-            </div>
-          </div>
-        </div>
-      </div>
+          <Box position="absolute" top="50%" right="20px" transform="translate(-50%,-50%)">
+            <RiFilter3Line size={20}/>
+          </Box>
+        </Box>
+        :
+        <Box display="flex" justifyContent="space-between" alignItems="center" paddingX="0px" paddingY="15px" borderBottom="1px solid #eee">
+          <Box display="flex" justifyContent="center" alignItems="center" flex={1}>
+            <Image src='/assets/images/logo.png' alt='Logo' w="35px"/>
+            <Text fontSize="1.5em" fontWeight="bold" color="#FF385C">airbnb</Text>
+          </Box>
+          
+          <Box flex={1}>
+            <Box width="max-content" margin="auto" display="flex" justifyContent="center" alignItems="center" padding="10px" borderRadius="full" fontSize="14px" border="1px solid #eee" boxShadow="0px 0px 5px #eee">
+              <Box paddingX="10px" paddingY="0px" fontWeight="bold" cursor="pointer" borderRight="1px solid #000">
+                Anywhere
+              </Box>
+              <Box paddingX="10px" paddingY="0px" fontWeight="bold" cursor="pointer" borderRight="1px solid #000">
+                Anyweek
+              </Box>
+              <Box paddingLeft="10px" display="flex" justifyContent="space-between" alignItems="center" cursor="pointer">
+                <Text marginRight="10px">Add Guests</Text>
+                <Box backgroundColor="#FF385C" padding="5px" borderRadius="full"><MdSearch size={20} color="#fff"/></Box>
+              </Box>
+            </Box>
+          </Box>
 
+          <Box flex={1}>
+            <Box width="260px" margin="auto" display="flex" justifyContent="space-between" alignItems="center">
+              <Text paddingX="14px" paddingY="10px" transition="all 100ms ease-in" borderRadius="full" fontSize="14px" fontWeight="bold" cursor="pointer" _hover={{ backgroundColor:"#faf9f9" }}>Become a host</Text>
+              <Box padding="10px" borderRadius="full" cursor="pointer" _hover={{backgroundColor: "#faf9f9"}}><BsGlobe/></Box>
+
+              <Box display="flex" justifyContent="center" alignItems="center" borderRadius="full" paddingX="12px" paddingY="8px" cursor="pointer" border="1px solid #ddd" _hover={{ boxShadow:"0px 0px 5px #ddd"}}>
+                <Box marginRight="10px">
+                  <FiMenu size={20}/>
+                </Box>
+                <FaUserCircle size={24}/>
+              </Box>
+
+            </Box>
+          </Box>
+
+        </Box>
+      }
     </div>
   )
 }

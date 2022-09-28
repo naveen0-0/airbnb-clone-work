@@ -1,18 +1,22 @@
 import type { NextPage } from 'next'
-import styles from '../styles/Home.module.css'
+import { Box } from '@chakra-ui/react'
+
 import NavBar from '../components/NavBar'
 import Categories from '../components/Categories'
 import Hotels from '../components/Hotels'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.nav_container}>
+    <Box minHeight="100vh">
+
+      <Box position="sticky" top="0px" backgroundColor="#fff" boxShadow="0px 0px 5px #aaa">
         <NavBar/>
         <Categories/>
-      </div>
+      </Box>
+
       <Hotels/>
-    </div>
+
+    </Box>
   )
 }
 

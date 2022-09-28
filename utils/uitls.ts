@@ -1,10 +1,10 @@
-type Category = {
+export type CategoryType = {
   id:number,
   title:string,
   imgsrc:string
 }
 
-export const categories:Category[] = [
+export const categories:CategoryType[] = [
   { id:1, title:"Beaches",imgsrc:"/assets/images/cat1.jpg" },
   { id:2, title:"Amazing pools",imgsrc:"/assets/images/cat2.jpg" },
   { id:3,title:"Islands",imgsrc:"/assets/images/cat3.jpg" },
@@ -27,7 +27,7 @@ export const categories:Category[] = [
   { id:20, title:"Luxe",imgsrc:"/assets/images/cat20.jpg" },
 ]
 
-export type Hotel = {
+export type HotelType = {
   id:number,
   title:string,
   rating:number | string,
@@ -37,7 +37,7 @@ export type Hotel = {
   imgsrc:string
 }
 
-export const hotels:Hotel[] = [
+export const hotels:HotelType[] = [
   {id:1, title:"Suomussalmi KK, Finland",rating:4.93,distance:6430,date:"10-15 Oct",price:10764,imgsrc:"/assets/images/hotel1.webp"},
   {id:2, title:"Pudasjarvi, Finland",rating:"New",distance:6517,date:"2-7 Oct",price:13903,imgsrc:"/assets/images/hotel2.webp"},
   {id:3, title:"Kuusamo, Finland",rating:5.0,distance:6490,date:"1-6 Oct",price:17940,imgsrc:"/assets/images/hotel3.webp"},

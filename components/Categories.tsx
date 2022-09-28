@@ -1,10 +1,9 @@
-import Image from 'next/image'
-import styles from '../styles/Category.module.css'
+import { Box } from '@chakra-ui/react'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
+import Category from './Category'
 import { RiFilter3Line } from 'react-icons/ri'
 import { categories } from '../utils/uitls'
 import { useRef, useState } from 'react'
-import Category from './Category'
 
 export default function Categories() {
   const scrollWidth = 1753;
@@ -33,18 +32,33 @@ export default function Categories() {
   }
 
   return (
-    <div className={styles.categories_container}>
+    <Box display="flex" justifyContent="center" alignItems="center" margin="10px">
 
-      <div className={styles.left} onClick={goLeft}><MdKeyboardArrowLeft size={26}/></div>
+      <Box onClick={goLeft} border="1px solid grey" borderRadius="full" marginX="5px" marginY="0px" cursor="pointer" marginRight="10px" _hover={{boxShadow:"0px 0px 5px 1px #bbb"}}>
+        <MdKeyboardArrowLeft size={26}/>
+      </Box>
 
-      <div className={styles.categories} ref={slider} onScroll={onSlide}>
-        {categories.map((category) => <Category title={category.title} src={category.imgsrc} key={category.id}/>)}
-      </div>
+      <Box 
+        ref={slider} 
+        onScroll={onSlide} 
+        sx={{'::-webkit-scrollbar':{display:"none"}}} 
+        display="flex" 
+        overflowX="scroll" 
+        gap="5px" 
+        marginRight="10px" 
+        scrollBehavior="smooth"
+      >
+        {categories.map((category) => <Category category={category} key={category.id}/>)}
+      </Box>
 
-      <div className={styles.right} onClick={goRight}><MdKeyboardArrowRight size={26}/></div>
+      <Box onClick={goRight} border="1px solid grey" borderRadius="full" marginX="5px" marginY="0px" cursor="pointer" marginRight="10px" _hover={{boxShadow:"0px 0px 5px 1px #bbb"}}>
+        <MdKeyboardArrowRight size={26}/>
+      </Box>
 
-      <div className={styles.filters}><RiFilter3Line size={24}/>Filters</div>
-    </div>
+      <Box width="160px" display="flex" justifyContent="space-around" alignItems="center" marginY="5px" marginX="0px" border="1px solid grey" paddingX="12px" paddingY="10px" borderRadius="5px" cursor="pointer" fontSize="14px">
+        <RiFilter3Line size={24}/>Filters
+      </Box>
+    </Box>
   )
 }
 
