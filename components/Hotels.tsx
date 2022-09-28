@@ -1,6 +1,5 @@
 import styles from '../styles/Hotels.module.css'
 import { Hotel, hotels } from '../utils/uitls'
-import Image from 'next/image'
 import { AiFillStar } from 'react-icons/ai'
 
 export default function Hotels() {
@@ -18,7 +17,6 @@ function Hotel({ hotel }:{ hotel:Hotel }) {
     <div className={styles.hotel} onClick={() => console.log(hotel)}>
 
       <div className={styles.hotel_image_container}>
-        {/* <Image src={hotel.imgsrc} alt={hotel.title} layout='fill' objectFit='cover' className={styles.hotel_image}/> */}
         <img src={hotel.imgsrc} alt={hotel.title} className={styles.hotel_image}/>
       </div>
 
