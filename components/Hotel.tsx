@@ -19,7 +19,7 @@ export default function Hotel({ hotel }:{ hotel:HotelType }) {
 
         <Text>{hotel.distance} kilometers</Text>
         <Text>{hotel.date}</Text>
-        <Box><Text fontWeight="bold">&#8377;{hotel.price}</Text> night</Box>
+        <Box><Text fontWeight="bold" display="inline">&#8377;{hotel.price}</Text> night</Box>
       </Box>
 
     </Box>
