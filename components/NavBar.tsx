@@ -7,7 +7,7 @@ import { FiMenu } from 'react-icons/fi'
 import { FaUserCircle } from 'react-icons/fa'
 
 export default function NavBar() {
-  const [isLargerThan900] = useMediaQuery('(min-width: 900px)')
+  const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
 
   return (
     <div>
@@ -15,7 +15,7 @@ export default function NavBar() {
         <title>Holiday Homes & Apartment Rentals - Airbnb - Airbnb</title>
       </Head>
 
-      {!isLargerThan900?
+      {!isLargerThan1000?
         <Box position="relative" padding="10px">
           <Box position="absolute" top="50%" left="35px" transform="translate(-50%,-50%)">
             <MdSearch size={20}/>
@@ -41,8 +41,9 @@ export default function NavBar() {
           </Box>
         </Box>
         :
-        <Box display="flex" justifyContent="space-between" alignItems="center" paddingX="0px" paddingY="15px" borderBottom="1px solid #eee">
-          <Box display="flex" justifyContent="center" alignItems="center" flex={1}>
+        <Box borderBottom="1px solid #eee">
+        <Box width="90%" margin="auto" display="flex" justifyContent="space-between" alignItems="center" paddingX="0px" paddingY="15px">
+          <Box display="flex" alignItems="center" flex={1}>
             <Image src='/assets/images/logo.png' alt='Logo' w="35px"/>
             <Text fontSize="1.5em" fontWeight="bold" color="#FF385C">airbnb</Text>
           </Box>
@@ -63,7 +64,7 @@ export default function NavBar() {
           </Box>
 
           <Box flex={1}>
-            <Box width="260px" margin="auto" display="flex" justifyContent="space-between" alignItems="center">
+            <Box width="260px" marginLeft="auto" display="flex" justifyContent="space-between" alignItems="center">
               <Text paddingX="14px" paddingY="10px" transition="all 100ms ease-in" borderRadius="full" fontSize="14px" fontWeight="bold" cursor="pointer" _hover={{ backgroundColor:"#faf9f9" }}>Become a host</Text>
               <Box padding="10px" borderRadius="full" cursor="pointer" _hover={{backgroundColor: "#faf9f9"}}><BsGlobe/></Box>
 
@@ -77,6 +78,8 @@ export default function NavBar() {
             </Box>
           </Box>
 
+
+        </Box>
         </Box>
       }
     </div>
