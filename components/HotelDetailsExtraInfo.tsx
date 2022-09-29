@@ -98,7 +98,7 @@ export default function HotelDetailsExtraInfo() {
         </Box>
       </Box>
 
-      <Box flex="2">
+      <Box flex="2" marginLeft="20px">
 
         <Box padding="20px" margin="20px" border="1px solid #ccc" borderRadius="10px" boxShadow="0px 0px 10px #ccc">
           <Box display="flex" justifyContent="space-between">
