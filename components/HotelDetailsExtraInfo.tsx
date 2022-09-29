@@ -136,7 +136,7 @@ export default function HotelDetailsExtraInfo() {
             Reserve
           </Box>
 
-          <Text textAlign="center" marginY="20px">You won't be charged yet</Text>
+          <Text textAlign="center" marginY="20px">You will not be charged yet</Text>
 
           <Box display="flex" justifyContent="space-between" marginY="10px">
             <Text textDecoration="underline">₹38,000 x 5 nights</Text>
