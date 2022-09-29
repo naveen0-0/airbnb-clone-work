@@ -57,7 +57,7 @@ export default function HotelDetailsExtraInfo() {
         </Box>
 
         <Box borderBottom="1px solid #aaa" paddingY="20px">
-          <Text fontWeight="bold" fontSize="24px" paddingBottom="10px">Where you'll sleep</Text>
+          <Text fontWeight="bold" fontSize="24px" paddingBottom="10px">Where you will sleep</Text>
 
           <Box display="flex">
             <Box>
