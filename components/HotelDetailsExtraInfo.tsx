@@ -61,12 +61,12 @@ export default function HotelDetailsExtraInfo() {
 
           <Box display="flex">
             <Box>
-              <Image src='/assets/images/details1.webp' borderRadius="10px" />
+              <Image src='/assets/images/details1.webp' borderRadius="10px" alt='Details image for the hotel1'/>
               <Text paddingTop="10px" fontWeight="bold">Bedroom 1</Text>
               <Text>1 king bed</Text>
             </Box>
             <Box marginLeft="10px">
-              <Image src='/assets/images/details2.webp' borderRadius="10px"/>
+              <Image src='/assets/images/details2.webp' borderRadius="10px" alt='Details image for the hotel1'/>
               <Text paddingTop="10px" fontWeight="bold">Bedroom 2</Text>
               <Text>1 king bed</Text>
             </Box>
