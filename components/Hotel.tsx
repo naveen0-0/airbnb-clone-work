@@ -5,7 +5,10 @@ import Link from 'next/link'
 
 export default function Hotel({ hotel }:{ hotel:HotelType }) {
   return (
-    <Link href={`${hotel.id}`}>
+    <Link href={{
+      pathname:`${hotel.id}`,
+      query:hotel
+    }}>
       <Box cursor="pointer">
 
         <Box display="flex" justifyContent="center" alignItems="center" height="250px">

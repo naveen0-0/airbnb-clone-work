@@ -4,6 +4,7 @@ import { Box } from '@chakra-ui/react'
 import NavBar from '../components/NavBar'
 import Categories from '../components/Categories'
 import Hotels from '../components/Hotels'
+import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       </Box>
 
       <Hotels/>
+      <Footer/>
 
     </Box>
   )
