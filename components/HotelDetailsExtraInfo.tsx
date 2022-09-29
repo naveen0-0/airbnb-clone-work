@@ -94,13 +94,13 @@ export default function HotelDetailsExtraInfo() {
               <Box display="flex" alignItems="center" paddingY="5px"><FaKey/> <Text marginLeft="10px" fontSize="18px">Smoke alarm</Text></Box>
             </Box>
           </Box>
-          <Box cursor="pointer" border="1px solid #000" width="max-content" paddingY="10px" paddingX="16px" marginY="20px" borderRadius="10px" fontSize="18px">Show all 47 amenities</Box>
+          <Box cursor="pointer" border="1px solid #000" width="max-content" paddingY="10px" paddingX="16px" marginY="20px" borderRadius="10px" fontSize="18px" _hover={{backgroundColor:"#eee"}}>Show all 47 amenities</Box>
         </Box>
       </Box>
 
       <Box flex="2">
 
-        <Box padding="20px" margin="20px" border="2px solid #ccc" borderRadius="10px" boxShadow="0px 0px 10px #ccc">
+        <Box padding="20px" margin="20px" border="1px solid #ccc" borderRadius="10px" boxShadow="0px 0px 10px #ccc">
           <Box display="flex" justifyContent="space-between">
             <Text fontSize="24px" fontWeight="bold">&#8377;38,000 night</Text>
             <Box display="flex" alignItems="center">
@@ -132,19 +132,19 @@ export default function HotelDetailsExtraInfo() {
             </Box>
           </Box>
 
-          <Box backgroundColor="#E0155A" textAlign="center" padding="10px" borderRadius="5px" color="#fff" fontWeight="bold">
+          <Box marginY="10px" backgroundColor="#E0155A" textAlign="center" padding="10px" borderRadius="5px" color="#fff" fontWeight="bold">
             Reserve
           </Box>
 
-          <Text textAlign="center" marginY="10px">You won't be charged yet</Text>
+          <Text textAlign="center" marginY="20px">You won't be charged yet</Text>
 
           <Box display="flex" justifyContent="space-between" marginY="10px">
-            <Text>₹38,000 x 5 nights</Text>
+            <Text textDecoration="underline">₹38,000 x 5 nights</Text>
             <Text>&#8377; 1,90,000</Text>
           </Box>
 
           <Box display="flex" justifyContent="space-between"  marginY="10px" paddingBottom="20px" borderBottom="2px solid #555">
-            <Text>Service fee</Text>
+            <Text textDecoration="underline">Service fee</Text>
             <Text>&#8377; 26,824</Text>
           </Box>
 
