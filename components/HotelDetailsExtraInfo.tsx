@@ -1,7 +1,12 @@
 import { Box, Text, Image, useMediaQuery } from '@chakra-ui/react'
 import { BsFillDoorOpenFill, BsFillCalendarDateFill } from 'react-icons/bs'
 import { FaKey } from 'react-icons/fa'
-import { AiFillStar } from 'react-icons/ai'
+import { AiFillStar, AiOutlineWifi, AiFillCamera } from 'react-icons/ai'
+import { GiKitchenKnives, GiSittingDog, GiBathtub } from 'react-icons/gi'
+import { MdOutlinePool } from 'react-icons/md'
+import { AiFillCar } from 'react-icons/ai'
+import { RiComputerFill } from 'react-icons/ri'
+import { BsFillAlarmFill } from 'react-icons/bs'
 
 export default function HotelDetailsExtraInfo() {
   const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
@@ -81,19 +86,19 @@ export default function HotelDetailsExtraInfo() {
 
           <Box display="flex">
             <Box>
-              <Box display="flex" alignItems="center" paddingY="5px"><FaKey/> <Text marginLeft="10px" fontSize="18px">Kitchen</Text></Box>
-              <Box display="flex" alignItems="center" paddingY="5px"><FaKey/> <Text marginLeft="10px" fontSize="18px">Free parking on premises</Text></Box>
-              <Box display="flex" alignItems="center" paddingY="5px"><FaKey/> <Text marginLeft="10px" fontSize="18px">Hot tub</Text></Box>
-              <Box display="flex" alignItems="center" paddingY="5px"><FaKey/> <Text marginLeft="10px" fontSize="18px">TV</Text></Box>
-              <Box display="flex" alignItems="center" paddingY="5px"><FaKey/> <Text marginLeft="10px" fontSize="18px">Carbon monoxide alarm</Text></Box>
+              <Box display="flex" alignItems="center" paddingY="5px"><GiKitchenKnives size={22}/> <Text marginLeft="10px" fontSize="18px">Kitchen</Text></Box>
+              <Box display="flex" alignItems="center" paddingY="5px"><AiFillCar size={22}/> <Text marginLeft="10px" fontSize="18px">Free parking on premises</Text></Box>
+              <Box display="flex" alignItems="center" paddingY="5px"><GiBathtub size={22}/> <Text marginLeft="10px" fontSize="18px">Hot tub</Text></Box>
+              <Box display="flex" alignItems="center" paddingY="5px"><RiComputerFill size={22}/> <Text marginLeft="10px" fontSize="18px">TV</Text></Box>
+              <Box display="flex" alignItems="center" paddingY="5px"><BsFillAlarmFill size={22}/> <Text marginLeft="10px" fontSize="18px">Carbon monoxide alarm</Text></Box>
             </Box>
 
             <Box marginLeft="30px">
-              <Box display="flex" alignItems="center" paddingY="5px"><FaKey/> <Text marginLeft="10px" fontSize="18px">Wifi</Text></Box>
-              <Box display="flex" alignItems="center" paddingY="5px"><FaKey/> <Text marginLeft="10px" fontSize="18px">Pool</Text></Box>
-              <Box display="flex" alignItems="center" paddingY="5px"><FaKey/> <Text marginLeft="10px" fontSize="18px">Pets allowed</Text></Box>
-              <Box display="flex" alignItems="center" paddingY="5px"><FaKey/> <Text marginLeft="10px" fontSize="18px">Security cameras on property</Text></Box>
-              <Box display="flex" alignItems="center" paddingY="5px"><FaKey/> <Text marginLeft="10px" fontSize="18px">Smoke alarm</Text></Box>
+              <Box display="flex" alignItems="center" paddingY="5px"><AiOutlineWifi size={22}/> <Text marginLeft="10px" fontSize="18px">Wifi</Text></Box>
+              <Box display="flex" alignItems="center" paddingY="5px"><MdOutlinePool size={22}/> <Text marginLeft="10px" fontSize="18px">Pool</Text></Box>
+              <Box display="flex" alignItems="center" paddingY="5px"><GiSittingDog size={22}/> <Text marginLeft="10px" fontSize="18px">Pets allowed</Text></Box>
+              <Box display="flex" alignItems="center" paddingY="5px"><AiFillCamera size={22}/> <Text marginLeft="10px" fontSize="18px">Security cameras on property</Text></Box>
+              <Box display="flex" alignItems="center" paddingY="5px"><BsFillAlarmFill size={22}/> <Text marginLeft="10px" fontSize="18px">Smoke alarm</Text></Box>
             </Box>
           </Box>
           <Box cursor="pointer" border="1px solid #000" width="max-content" paddingY="10px" paddingX="16px" marginY="20px" borderRadius="10px" fontSize="18px" _hover={{backgroundColor:"#eee"}}>Show all 47 amenities</Box>
@@ -160,6 +165,7 @@ export default function HotelDetailsExtraInfo() {
 
         </Box>
       </Box>
+
     </Box>
   )
 }
