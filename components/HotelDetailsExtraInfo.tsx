@@ -1,11 +1,13 @@
-import { Box, Text, Image } from '@chakra-ui/react'
+import { Box, Text, Image, useMediaQuery } from '@chakra-ui/react'
 import { BsFillDoorOpenFill, BsFillCalendarDateFill } from 'react-icons/bs'
 import { FaKey } from 'react-icons/fa'
 import { AiFillStar } from 'react-icons/ai'
 
 export default function HotelDetailsExtraInfo() {
+  const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
+
   return (
-    <Box display="flex" justifyContent="space-between">
+    <Box display="flex" justifyContent="space-between" flexDirection={isLargerThan1000?"row":"column"}>
 
       <Box flex="4">
         <Box display="flex" justifyContent="space-between" alignItems="center" padding="20px" borderBottom="1px solid #aaa">

@@ -1,4 +1,4 @@
-import { Box, Text, Image } from "@chakra-ui/react"
+import { Box, Text, Image, useMediaQuery } from "@chakra-ui/react"
 import NavBar from "../components/NavBar"
 import { useRouter } from 'next/router'
 import { AiFillStar } from 'react-icons/ai'
@@ -6,6 +6,7 @@ import { FiShare, FiHeart } from 'react-icons/fi'
 import HotelDetailsExtraInfo from "../components/HotelDetailsExtraInfo"
 
 export default function HotelDetailsPage() {
+  const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
   const router = useRouter();
   const { id, title, rating, date, distance, price, imgsrc } = router.query
 
@@ -32,7 +33,7 @@ export default function HotelDetailsPage() {
         </Box>
 
         <Box paddingY="20px">
-          <Image src={`${imgsrc}`} alt={`${title}`} margin="auto" borderRadius="20px" width="80%" height="600px" objectFit="cover"/>
+          <Image src={`${imgsrc}`} alt={`${title}`} margin="auto" borderRadius="20px" width={isLargerThan1000?"80%":"100%"} height="600px" objectFit="cover"/>
         </Box>
 
         <HotelDetailsExtraInfo/>
